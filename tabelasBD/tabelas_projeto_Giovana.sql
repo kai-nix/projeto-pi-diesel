@@ -6,21 +6,23 @@ use sprint1;
 create table empresa(
 idEmpresa int primary key auto_increment,
 nome VARCHAR(50),
-email VARCHAR(50),
+email VARCHAR(50) not null,
 telefone char(11),
-CNPJ char(14)
+CNPJ char(14) not null,
+cep char(8),
+numero varchar(10)
 );
 
 insert into empresa values 
-(default, 'Petrobras Distribuidora', 'petrobras@hotmail.com', '11993006791', '11776414000123'),
-(default, 'Raízen', 'ipiranga@hotmail.com', '11988776589', '85627436000168'),
-(default, 'BR Distribuidora', 'brDistribuidora', '11977658976', '64569558000175');
+(default, 'Petrobras Distribuidora', 'petrobras@hotmail.com', '11993006791', '11776414000123', '03254000', '5'),
+(default, 'Raízen', 'ipiranga@hotmail.com', '11988776589', '85627436000168', '03256879', '8'),
+(default, 'BR Distribuidora', 'brDistribuidora', '11977658976', '64569558000175', '03256890', '250');
 
 create table tanques(
 idTanque int primary key auto_increment,
 localizacao VARCHAR(50),
-capacidade float,
-altura float
+capacidade float not null,
+altura float not null
 );
 
 insert into tanques values 
@@ -61,17 +63,20 @@ insert into sensorLimite values
 create table alertas (
     idAlerta int PRIMARY KEY auto_increment,
     tipoAlerta varchar(50),
+    constraint chkTipo 
+    check(tipoAlerta in ('Temperatura alta', 'Nível baixo', 'Temperatura baixa', 'Nível alto')),
 	datalog TIMESTAMP default current_timestamp,
     tipoSensor varchar(30),
     constraint chkSensor
     Check (tipoSensor in ('temperatura', 'ultrassonico')),
     statusAlerta varchar(20),
     constraint chkStatus
-    Check (statusAlerta in ( 'Resolvido', 'Ativo'))
+    Check (statusAlerta in ( 'Resolvido', 'Pendente'))
     );
     
 insert into alertas values
-(default, 'Temperatura alta', now(), 'temperatura', 'Ativo'),
+(default, 'Temperatura alta', now(), 'temperatura', 'Pendente'),
 (default, 'Nível baixo', now(), 'ultrassonico', 'Resolvido'),
-(default, 'Temperatura baixa', now(), 'temperatura', 'Ativo'),
+(default, 'Temperatura baixa', now(), 'temperatura', 'Pendente'),
 (default, 'Nível alto', now(), 'ultrassonico', 'Resolvido');
+
