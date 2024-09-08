@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    </style>
+</head>
+<body>
+
+
+    <h1>Simule Aqui!</h1> <br> 
+    
+    Qual é o porte da sua empresa?
+    <input type="text" id="input_porte_empresa" placeholder="Pequeno, Médio ou Grande"> <br>
+
+    Quantos tanques possui a sua empresa?
+    <input type="number" id="input_quantidade_tanques" placeholder="100"> <br>
+
+    Quantos litros cada tanque suporta?
+    <input type="number" id="input_litros_diesel" placeholder="10.000"> <br>
+
+    Quanto a sua empresa cobra por litro do Diesel?
+    <input type="number" id="input_litro_diesel" placeholder="6.00"> <br>
+
+    Qual é a frequência de monitoramento da temperatura atualmente?
+    <input type="text" id="input_frequencia_monitoramento" placeholder="Nula ou Baixa"> 
+
+    <button onclick="calcular()">Calcular</button> <br> <br>
+
+    <div id="resultado">
+
+    </div>
+
+
+
+</body>
+</html>
+<script>
+    function calcular(){
+
+    const porte = input_porte_empresa.value
+    const qntTanques = Number(input_quantidade_tanques.value)
+    const litros = Number(input_litros_diesel.value)
+    const valorDiesel = Number(input_litro_diesel.value)
+    const frequencia = input_frequencia_monitoramento.value
+    var totalLitros = qntTanques * litros
+    
+    var qntDesperdiçadaGrande = totalLitros * 0.01
+    var qntDesperdiçadaMedio = totalLitros  * 0.015 
+    var qntDesperdiçadaPequeno = totalLitros  * 0.02
+   
+    var perdaFinanceiraGrande = qntDesperdiçadaGrande * valorDiesel 
+    var perdaFinanceiraMedio = qntDesperdiçadaMedio * valorDiesel 
+    var perdaFinanceiraPequeno = qntDesperdiçadaPequeno * valorDiesel 
+    
+    var qntRecuperadaGrande = perdaFinanceiraGrande * 0.7
+    var qntRecuperadaMedio = perdaFinanceiraMedio * 0.7
+    var qntRecuperadaPequeno = perdaFinanceiraPequeno * 0.7
+    
+
+    if(frequencia == 'Nula'){
+        resultado.innerHTML = `<img src="https://pensandolinux.com.br/wp-content/uploads/2017/01/download.jpg"width="100px"> <br> <br>
+                                <b>ALERTA!</b> Sem o monitoramento de temperatura, poderá ocorrer explosões! <br>
+                                                 Contrate nossa solução para eliminar os riscos de explosões e garantir a segurança total.<br> <br>`
+   
+    } else{
+        resultado.innerHTML = `<img src="https://img.freepik.com/vetores-premium/sinal-de-aviso-icone-de-alerta-sinal-de-atencao-de-aviso-de-perigo_610474-197.jpg"width="100px"> <br> <br>
+                                <b>ALERTA!</b> Com a baixa frequência de monitoramento, poderá ocorrer explosões! <br>
+                                            Contrate nossa solução para eliminar os riscos de explosões e garantir a segurança total. <br> <br> `
+    }
+
+    if(porte == 'Grande'){
+
+        resultado.innerHTML += `Sua empresa está <b>perdendo</b> ${qntDesperdiçadaGrande} Litros de Diesel <br>
+                               <h2> Você <b>perde</b> no Total: <b>R$${perdaFinanceiraGrande}</h2></b> <br>
+                                 <h2>Com a <b>nossa proposta</b>, você <b>deixaria de perder:</b> <b>R$${qntRecuperadaGrande}</h2></b> <br> <br>
+
+                                De acordo com a  Energy Efficiency, a introdução de sistemas de monitoramento em tempo real em instalações industriais resultou em reduções de até 70% nas perdas de energia e matérias-primas. <br> O acesso a dados em tempo real permite ajustes rápidos que evitam desperdícios e melhoram a eficiência geral.
+                               `
+                                
+    } else if (porte == 'Pequeno'){
+        resultado.innerHTML += `Sua empresa está <b>perdendo</b> ${qntDesperdiçadaPequeno} Litros de Diesel <br>
+                                <h2>Você <b>perde</b> no Total: <b>R$${perdaFinanceiraPequeno}</h2></b> <br>
+                                <h2>Com a <b>nossa proposta</b>, você <b>deixaria de perder</b> <b>R$${qntRecuperadaPequeno}</h2></b> <br> <br>
+
+                                De acordo com a  Energy Efficiency, a introdução de sistemas de monitoramento em tempo real em instalações industriais resultou em reduções de até 70% nas perdas de energia e matérias-primas. <br> O acesso a dados em tempo real permite ajustes rápidos que evitam desperdícios e melhoram a eficiência geral.
+                               `
+
+
+    } else {
+        resultado.innerHTML += `Sua empresa está <b>perdendo</b> ${qntDesperdiçadaMedio} Litros de Diesel <br>
+                                 <h2>Você <b>perde</b> no Total: <b>R$${perdaFinanceiraMedio} </h2></b> <br>
+                                 <h2>Com a <b>nossa proposta</b>, você <b>deixaria de perder</b> <b>R$${qntRecuperadaMedio} </h2></b> <br> <br>
+
+                                De acordo com a  Energy Efficiency, a introdução de sistemas de monitoramento em tempo real em instalações industriais resultou em reduções de até 70% nas perdas de energia e matérias-primas. <br> O acesso a dados em tempo real permite ajustes rápidos que evitam desperdícios e melhoram a eficiência geral.
+                               `
+
+
+    }
+
+    
+
+
+
+
+
+}
+</script>
