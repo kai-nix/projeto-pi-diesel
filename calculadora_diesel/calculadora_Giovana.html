@@ -3,32 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simule Aqui! | TechDiesel</title>
+    <title>Simule Aqui! | Tech Diesel</title>
    
     </style>
 </head>
 <body>
-<br> <br>
-    <img src="logo_TechDiesel.png" alt="logo da nossa empresa, TechDiesel" width="90px">
+<br><img src="logo_TechDiesel2.png" alt="logo da nossa empresa, Tech Diesel" width="150px">
     <h1>Simule Aqui!</h1> <br> 
     
     Qual é o porte da sua empresa?
-    <select name="" id="input_porte_empresa">
+    <select id="input_porte_empresa">
 
         <option value="Pequeno">Pequeno</option>
         <option value="Médio">Médio</option>
         <option value="Grande">Grande</option>
-    </select> <br>
+    </select> <br><br>
 
 
     Quantos tanques possui a sua empresa?
-    <input type="number" id="input_quantidade_tanques" placeholder="100"> <br>
+    <input type="number" id="input_quantidade_tanques" placeholder="Exemplo: 100"> tanques<br><br>
 
     Quantos litros cada tanque suporta?
-    <input type="number" id="input_litros_diesel" placeholder="750.000"> <br>
+    <input type="number" id="input_litros_diesel" placeholder="Exemplo: 750000"> litros<br><br>
 
     Quanto a sua empresa cobra por litro do Diesel?
-    <input type="number" id="input_litro_diesel" placeholder="6.00"> <br>
+    <input type="number" id="input_litro_diesel" placeholder="Exemplo: 6"> reais<br><br>
 
     Qual é a frequência de monitoramento da temperatura atualmente?
     <select name="" id="input_frequencia_monitoramento">
@@ -68,9 +67,12 @@
     var qntRecuperadaGrande = perdaFinanceiraGrande * 0.6
     var qntRecuperadaMedio = perdaFinanceiraMedio * 0.6
     var qntRecuperadaPequeno = perdaFinanceiraPequeno * 0.6
+
+
+    
     
 
-    if (litros < 750000){
+    if (totalLitros < 750000){
             resultado.innerHTML=`A capacidade mínima de armazenamento exigida pela ANP é de 750.000 litros. Insira um número maior.`
         }else {
 
@@ -91,16 +93,30 @@
                                <h2> Você <b>perde</b> no Total: <b>R$${perdaFinanceiraGrande}</h2></b> <br>
                                  <h2>Com a <b>nossa proposta</b>, você <b>deixaria de perder:</b> <b>R$${qntRecuperadaGrande}</h2></b> <br> <br>
 
-                                De acordo com um Estudo da IBM, a introdução de sistemas de monitoramento em tempo real resultou em reduções de até 60% de perdas de combustível devido à evaporação, transbordamento e outros fatores. O acesso a dados em tempo real permite ajustes rápidos que evitam desperdícios e melhoram a eficiência geral.
+                                De acordo com um Estudo da IBM, a introdução de sistemas de monitoramento em tempo real resultou em reduções de até 60% de perdas de combustível devido à evaporação, transbordamento e outros fatores.
+                                <br>O acesso a dados em tempo real permite ajustes rápidos que evitam desperdícios e melhoram a eficiência geral.
                                `
+                               resultado.innerHTML+=`<br><br><hr><h3>Outros gastos cumulativos</h3>
+        Além destes, sem o controle adequado dos seus tanques você também está sujeito a outros gastos estatais!
+        <br><br>
+        <button onclick="button()">Clique aqui e entenda</button>
+        <br><br>
+        `
                                 
     } else if (porte == 'Pequeno'){
         resultado.innerHTML += `Sua empresa está <b>perdendo</b> ${qntDesperdiçadaPequeno} Litros de Diesel <br>
                                 <h2>Você <b>perde</b> no Total: <b>R$${perdaFinanceiraPequeno}</h2></b> <br>
                                 <h2>Com a <b>nossa proposta</b>, você <b>deixaria de perder</b> <b>R$${qntRecuperadaPequeno}</h2></b> <br> <br>
 
-                                De acordo com um Estudo da IBM, a introdução de sistemas de monitoramento em tempo real resultou em reduções de até 60% de perdas de combustível devido à evaporação, transbordamento e outros fatores. O acesso a dados em tempo real permite ajustes rápidos que evitam desperdícios e melhoram a eficiência geral.
+                                De acordo com um Estudo da IBM, a introdução de sistemas de monitoramento em tempo real resultou em reduções de até 60% de perdas de combustível devido à evaporação, transbordamento e outros fatores.
+                                <br>O acesso a dados em tempo real permite ajustes rápidos que evitam desperdícios e melhoram a eficiência geral.
                                `
+                               resultado.innerHTML+=`<br><br><hr><h3>Outros gastos cumulativos</h3>
+        Além destes, sem o controle adequado dos seus tanques você também está sujeito a outros gastos estatais!
+        <br><br>
+        <button onclick="button()">Clique aqui e entenda</button>
+        <br><br>
+        `
 
 
     } else {
@@ -108,8 +124,16 @@
                                  <h2>Você <b>perde</b> no Total: <b>R$${perdaFinanceiraMedio} </h2></b> <br>
                                  <h2>Com a <b>nossa proposta</b>, você <b>deixaria de perder</b> <b>R$${qntRecuperadaMedio} </h2></b> <br> <br>
 
-                                De acordo com um Estudo da IBM, a introdução de sistemas de monitoramento em tempo real resultou em reduções de até 60% de perdas de combustível devido à evaporação, transbordamento e outros fatores. O acesso a dados em tempo real permite ajustes rápidos que evitam desperdícios e melhoram a eficiência geral.
+                                De acordo com um Estudo da IBM, a introdução de sistemas de monitoramento em tempo real resultou em reduções de até 60% de perdas de combustível devido à evaporação, transbordamento e outros fatores.
+                                <br>O acesso a dados em tempo real permite ajustes rápidos que evitam desperdícios e melhoram a eficiência geral.
+                                <br>
                                `
+        resultado.innerHTML+=`<br><br><hr><h3>Outros gastos cumulativos</h3>
+        Além destes, sem o controle adequado dos seus tanques você também está sujeito a outros gastos estatais!
+        <br><br>
+        <button onclick="button()">Clique aqui e entenda</button>
+        <br><br>
+        `
 
 
     }
@@ -120,5 +144,20 @@
 
 
 
+}
+
+function button(){
+
+    var lei1 = 1000000
+    var lei2 = 50000000
+    var lei3 = 50000
+    var total = lei1+lei2+lei3
+
+    
+    resultado.innerHTML+=`
+    <li>A <i>Agência Nacional do Petróleo, Gás Natural e Biocombustíveis (ANP)</i> prevê uma multa de até <u>R$${lei1}</u> para falhas em controle de vazamentos;
+    <br><li>Caso haja infração da <i>Lei de Crimes Ambientais (Lei nº 9.605/1998)</i>, você também estará sujeito a uma penalidade adicional de até <u>R$${lei2}</u>;
+    <br><li>Segundo a <i>CONAMA (Conselho Nacional do Meio Ambiente)</i>, infrações relacionadas a gases poluentes podem alcançar até <u>R$${lei3}</u>;
+    <br><br>Considerando todas essas penalidades, você está sujeito a um valor total de até <h1>R$${total.toFixed()} em prejuízos legais</h1> sem uma boa monitoração em seus tanques!`
 }
 </script>
