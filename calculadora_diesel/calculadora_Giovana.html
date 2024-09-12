@@ -87,11 +87,18 @@
                                             Contrate nossa solução para eliminar os riscos de explosões e garantir a segurança total. <br> <br> `
     }
 
+    
     if(porte == 'Grande'){
 
+<<<<<<< HEAD
         resultado.innerHTML += `Sua empresa está <b>perdendo</b> ${qntDesperdiçadaGrande.toLocaleString("pt-BR")} Litros de Diesel <br>
                                <h2> Você <b>perde</b> no Total: <b>R$${perdaFinanceiraGrande.toLocaleString("pt-BR")}</h2></b> <br>
                                  <h2>Com a <b>nossa proposta</b>, você <R$$>deixaria de perder: R$${qntRecuperadaGrande.toLocaleString("pt-BR")}</h2></b> <br> <br>
+=======
+        resultado.innerHTML += `Sua empresa está <b>perdendo</b> ${qntDesperdiçadaGrande} Litros de Diesel <br>
+                               <h2> Você <b>perde</b> no Total: <b>R$${perdaFinanceiraGrande}</h2></b> <br>
+                                 <h2>Com a <b>nossa proposta</b>, você <b>deixaria de perder:</b> <b>R$${qntRecuperadaGrande.toLocaleString("pt-BR", { style: 'currency', currency: 'BRL' })}</h2></b> <br> <br>
+>>>>>>> f75b1e0d6baba584126edf22417b0e3f5b2f73d1
 
                                 De acordo com um Estudo da IBM, a introdução de sistemas de monitoramento em tempo real resultou em reduções de até 60% de perdas de combustível devido à evaporação, transbordamento e outros fatores.
                                 <br>O acesso a dados em tempo real permite ajustes rápidos que evitam desperdícios e melhoram a eficiência geral.
@@ -104,9 +111,15 @@
         `
                                 
     } else if (porte == 'Pequeno'){
+<<<<<<< HEAD
         resultado.innerHTML += `Sua empresa está <b>perdendo</b> ${qntDesperdiçadaPequeno.toLocaleString("pt-BR")} Litros de Diesel <br>
                                 <h2>Você <b>perde</b> no Total: <b>R$${perdaFinanceiraPequeno.toLocaleString("pt-BR")}</h2></b> <br>
                                 <h2>Com a <b>nossa proposta</b>, você <R$$>deixaria de perder R$${qntRecuperadaPequeno.toLocaleString("pt-BR")}</h2></b> <br> <br>
+=======
+        resultado.innerHTML += `Sua empresa está <b>perdendo</b> ${qntDesperdiçadaPequeno} Litros de Diesel <br>
+                                <h2>Você <b>perde</b> no Total: <b>R$${perdaFinanceiraPequeno}</h2></b> <br>
+                                <h2>Com a <b>nossa proposta</b>, você <b>deixaria de perder</b> <b>R$${qntRecuperadaPequeno}</h2></b> <br> <br>
+>>>>>>> f75b1e0d6baba584126edf22417b0e3f5b2f73d1
 
                                 De acordo com um Estudo da IBM, a introdução de sistemas de monitoramento em tempo real resultou em reduções de até 60% de perdas de combustível devido à evaporação, transbordamento e outros fatores.
                                 <br>O acesso a dados em tempo real permite ajustes rápidos que evitam desperdícios e melhoram a eficiência geral.
@@ -120,9 +133,15 @@
 
 
     } else {
+<<<<<<< HEAD
         resultado.innerHTML += `Sua empresa está <b>perdendo</b> ${qntDesperdiçadaMedio.toLocaleString("pt-BR")} Litros de Diesel <br>
                                  <h2>Você <b>perde</b> no Total: <b>R$${perdaFinanceiraMedio.toLocaleString("pt-BR")} </h2></b> <br>
                                  <h2>Com a <b>nossa proposta</b>, você <R$$>deixaria de perder R$${qntRecuperadaMedio.toLocaleString("pt-BR")} </h2></b> <br> <br>
+=======
+        resultado.innerHTML += `Sua empresa está <b>perdendo</b> ${qntDesperdiçadaMedio} Litros de Diesel <br>
+                                 <h2>Você <b>perde</b> no Total: <b>R$${perdaFinanceiraMedio} </h2></b> <br>
+                                 <h2>Com a <b>nossa proposta</b>, você <b>deixaria de perder</b> <b>R$${qntRecuperadaMedio} </h2></b> <br> <br>
+>>>>>>> f75b1e0d6baba584126edf22417b0e3f5b2f73d1
 
                                 De acordo com um Estudo da IBM, a introdução de sistemas de monitoramento em tempo real resultou em reduções de até 60% de perdas de combustível devido à evaporação, transbordamento e outros fatores.
                                 <br>O acesso a dados em tempo real permite ajustes rápidos que evitam desperdícios e melhoram a eficiência geral.
@@ -148,16 +167,16 @@
 
 function button(){
 
-    var lei1 = 1_000_000
-    var lei2 = 50_000_000
-    var lei3 = 50_000
+    var lei1 = 1000000
+    var lei2 = 50000000
+    var lei3 = 50000
     var total = lei1+lei2+lei3
 
     
     resultado.innerHTML+=`
-    <li>A <i>Agência Nacional do Petróleo, Gás Natural e Biocombustíveis (ANP)</i> prevê uma multa de até <u>R$${lei1.toLocaleString("pt-BR")}</u> para falhas em controle de vazamentos;
-    <br><li>Caso haja infração da <i>Lei de Crimes Ambientais (Lei nº 9.605/1998)</i>, você também estará sujeito a uma penalidade adicional de até <u>R$${lei2.toLocaleString("pt-BR")}</u>;
-    <br><li>Segundo a <i>CONAMA (Conselho Nacional do Meio Ambiente)</i>, infrações relacionadas a gases poluentes podem alcançar até <u>R$${lei3.toLocaleString("pt-BR")}</u>;
-    <br><br>Considerando todas essas penalidades, você está sujeito a um valor total de até <h1>R$${total.toLocaleString("pt-BR")} em prejuízos legais</h1> sem uma boa monitoração em seus tanques!`
+    <li>A <i>Agência Nacional do Petróleo, Gás Natural e Biocombustíveis (ANP)</i> prevê uma multa de até <u>R$${lei1}</u> para falhas em controle de vazamentos;
+    <br><li>Caso haja infração da <i>Lei de Crimes Ambientais (Lei nº 9.605/1998)</i>, você também estará sujeito a uma penalidade adicional de até <u>R$${lei2}</u>;
+    <br><li>Segundo a <i>CONAMA (Conselho Nacional do Meio Ambiente)</i>, infrações relacionadas a gases poluentes podem alcançar até <u>R$${lei3}</u>;
+    <br><br>Considerando todas essas penalidades, você está sujeito a um valor total de até <h1>R$${total.toFixed()} em prejuízos legais</h1> sem uma boa monitoração em seus tanques!`
 }
 </script>
