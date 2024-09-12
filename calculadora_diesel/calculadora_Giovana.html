@@ -72,6 +72,7 @@
     
     
 
+    
     if (totalLitros < 750000){
             resultado.innerHTML=`A capacidade mínima de armazenamento exigida pela ANP é de 750.000 litros. Insira um número maior.`
         }else {
@@ -87,11 +88,12 @@
                                             Contrate nossa solução para eliminar os riscos de explosões e garantir a segurança total. <br> <br> `
     }
 
+    
     if(porte == 'Grande'){
 
         resultado.innerHTML += `Sua empresa está <b>perdendo</b> ${qntDesperdiçadaGrande} Litros de Diesel <br>
                                <h2> Você <b>perde</b> no Total: <b>R$${perdaFinanceiraGrande}</h2></b> <br>
-                                 <h2>Com a <b>nossa proposta</b>, você <b>deixaria de perder:</b> <b>R$${qntRecuperadaGrande}</h2></b> <br> <br>
+                                 <h2>Com a <b>nossa proposta</b>, você <b>deixaria de perder:</b> <b>R$${qntRecuperadaGrande.toLocaleString("pt-BR", { style: 'currency', currency: 'BRL' })}</h2></b> <br> <br>
 
                                 De acordo com um Estudo da IBM, a introdução de sistemas de monitoramento em tempo real resultou em reduções de até 60% de perdas de combustível devido à evaporação, transbordamento e outros fatores.
                                 <br>O acesso a dados em tempo real permite ajustes rápidos que evitam desperdícios e melhoram a eficiência geral.
